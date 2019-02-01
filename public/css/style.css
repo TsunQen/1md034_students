@@ -1,0 +1,75 @@
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+
+/* Handling cross-browser compatibilaty 
+TOOOOOOOOOOOOOOOODDDDDDDDDDDDDDDDDDDDOOOOOOOOOOOOOOOOOO*/
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.25em;
+    color: black;
+}
+
+.ing {
+    font-weight: bold;
+}
+
+#Burgers {
+    color: white;
+    background-color: black;
+    border: 10px dashed  blue;
+}
+
+#Customer {
+    border: 10px dashed red;
+    padding: 20px;
+}
+
+#headern {
+    margin:25px;
+    height: 525px;
+    overflow:hidden;
+}
+
+#headPic {
+    opacity: 0.5;
+    width:100%;
+    height:auto;
+}
+#textHead {
+    position: absolute;
+    padding-top: 100px;
+    padding-left: 350px;
+    font-size: 4em;
+    
+}
+
+#buttonHolder {
+    text-align:center;
+}
+
+button:hover {
+    /* Ändra färg på cursorn när den är över knappen
+    cursor: url(https://images-na.ssl-images-amazon.com/images/I/41UrOMSSP5L._SX425_.jpg), auto;
+    */
+    color: pink;
+    transform: scale(5,5);
+    cursor: crosshair;
+}
+
+table#burgerID {
+    margin-left:15%;
+    margin-right:15%;
+}
+
+#burgerSK {
+    text-align:center;
+}
+
+table {
+    width: 80%;
+    text-align: center;
+}
+
+section {
+    margin:25px;
+}
