@@ -7,6 +7,7 @@ body {
     font-family: "Times New Roman", Times, serif;
     font-size: 1.25em;
     color: black;
+    background-color: pink;
 }
 
 .ing {
@@ -15,13 +16,15 @@ body {
 
 #Burgers {
     color: white;
-    background-color: black;
+    background-color: green;
     border: 10px dashed  blue;
 }
 
 #Customer {
     border: 10px dashed red;
     padding: 20px;
+    background-color: blue;
+    color: #66ffff;
 }
 
 #headern {
@@ -73,3 +76,34 @@ table {
 section {
     margin:25px;
 }
+
+.wrapper {
+     display: grid;     
+     grid-column-gap: 50px;
+ }
+
+ .box {
+     background-color: yellow;
+     color: blue;
+     border-radius: 100px;
+     padding: 20px;
+     font-size: 150%;
+     text-align:center;
+ }
+
+ .b0 {     
+     grid-column: 1;
+ }
+ .b1 {
+     grid-column: 2;
+ }
+ .b2 {
+     grid-column: 3;
+ }
+
+ .b3 {
+     grid-column: 4;
+ }
+ .b4 {
+     grid-column: 5;
+ }
