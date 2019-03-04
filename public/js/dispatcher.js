@@ -7,15 +7,18 @@ var socket = io();
 var vm = new Vue({
   el: '#orders',
   data: {
-    orders: {},
+      orders: {},
+      info: {},
   },
   created: function () {
     socket.on('initialize', function (data) {
-      this.orders = data.orders;
+        this.orders = data.orders;
+        this.info = data.info;
     }.bind(this));
 
     socket.on('currentQueue', function (data) {
-      this.orders = data.orders;
+        this.orders = data.orders;
+        this.info = data.info;
     }.bind(this));
   }
 });

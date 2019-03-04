@@ -7,7 +7,8 @@ var socket = io();
 var vm = new Vue({
   el: '#dots',
   data: {
-    orders: {},
+      orders: {},
+      tmpAdress:"",
   },
   created: function () {
     socket.on('initialize', function (data) {
@@ -33,6 +34,15 @@ var vm = new Vue({
                                            y: event.clientY - 10 - offset.y },
                                 orderItems: ["Beans", "Curry"]
                               });
+    },
+
+      displayOrder: function (event) {
+          console.log("hej");
+            var offset = {x: event.currentTarget.getBoundingClientRect().left,
+                          y: event.currentTarget.getBoundingClientRect().top};
+            this.tmpAdress = { x: event.clientX - 10 - offset.x,
+                               y: event.clientY - 10 - offset.y };
+          this.orders = {};                  
+        },
     }
-  }
 });

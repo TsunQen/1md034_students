@@ -1,3 +1,31 @@
+function sendInfo() {
+    var info = [];
+    info.push(document.getElementById("full name").value);
+    info.push(document.getElementById("mail").value);
+    info.push(document.getElementById("street").value);
+    info.push(document.getElementById("big").value);
+    info.push(document.getElementById("house").value);
+
+    var e = document.getElementById("payment");
+    info.push(e.options[e.selectedIndex].text);
+
+    var gender = "g";
+    for (var i = 1; i<6; i++) {
+        var check = gender + i;
+        if (document.getElementById(check).checked) {
+            var radioValue = document.getElementById("l"+i).textContent;
+            break;
+        }
+    }
+    info.push(radioValue)
+    console.log("hej");
+    console.log(info);
+}
+
+var sendButton = document.getElementById("send");
+
+sendButton.addEventListener("click", sendInfo);
+
 
 
 function MenuItem(name, kcal, glut, lact, fact, imgSrc) {
@@ -7,7 +35,6 @@ function MenuItem(name, kcal, glut, lact, fact, imgSrc) {
     this.lact = lact;
     this.fact = fact;
     this.imgSrc = imgSrc
-    //this.className = "burger";
     this.listFacts = function() {
         var list = [];
         list.push(document.createTextNode(this.fact));
@@ -28,14 +55,13 @@ function MenuItem(name, kcal, glut, lact, fact, imgSrc) {
     };
 }
 
-var b1 = new MenuItem("Nasty ass burger", 1500, false, false, "free from everything", "http://www.pngmart.com/files/5/Hamburger-Transparent-PNG.png");
-var b2 = new MenuItem("Fat ass burger", 6000, true, false, "Soo much fat in this burger", "http://www.pngmart.com/files/5/Hamburger-Transparent-Background.png");
-var b3 = new MenuItem("Big Chungus burger", 3000, true, true, "Solely made of gluten and milk products", "http://www.pngmart.com/files/5/Hamburger-PNG-Picture.png");
 
-var b4 = new MenuItem("Big Chungus burger", 3000, true, true, "Solely made of gluten and milk products", "http://www.pngmart.com/files/5/Hamburger-PNG-Picture.png");
-
-var b5 = new MenuItem("Big Chungus burger", 3000, true, true, "Solely made of gluten and milk products", "http://www.pngmart.com/files/5/Hamburger-PNG-Picture.png");
-var menu = [b1,b2,b3, b4, b5];
+var menu = [];
+for (var b in food) {
+    var item = food[b];
+    var burger = new MenuItem(item.name, item.kcal, item.lactose, item.gluten, item.fact, item.img);
+    menu.push(burger);
+}
 
 function wrapper(burgers) {
     var wrap = document.getElementById("theWrapper");
@@ -55,7 +81,7 @@ function wrapper(burgers) {
         }
         var img = document.createElement("img");
         img.src = burgers[b].imgSrc
-        img.style.width = "200px";
+        img.style.width = "250px";
         d.appendChild(p.appendChild(t));
         d.appendChild(img);
         d.appendChild(list);
@@ -63,39 +89,6 @@ function wrapper(burgers) {
     }
 }
 wrapper(menu);
-/*
-var bMenu = document.createElement("div");
-function putIn(burger, menu) {
-    var item = document.createElement("p");
-    var txt = document.createTextNode(burger.burger());
-    item.appendChild(txt);
-    menu.appendChild(item);
-    menu.style.color = "red";
-    menu.style.backgroundColor = "blue";
-    return menu;
-}
-putIn(b1, bMenu);
-putIn(b2, bMenu);
-putIn(b3, bMenu);
-document.body.appendChild(bMenu);
 
-var myBoolString = document.getElementById("myID2");
-console.log(myBoolString.hasChildNodes());
-if(true && myBoolString.hasChildNodes()) 
-{
-	  myBoolString.innerHTML = "<p>Conditionall text visible</p>";
-}
-else if(false) 
-{
-	  myBoolString.innerHTML = "";
-}
-var burgers = [b1,b2,b3];
 
-var burgerList = document.getElementById("myID3");
-for (var daBurger in burgers) {
-    var listItem = document.createElement("li");
-    console.log(burgers[daBurger].burger());
-    var listValue = document.createTextNode(burgers[daBurger].burger());
-    listItem.appendChild(listValue);
-    burgerList.appendChild(listItem);
-}*/
+

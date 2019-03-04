@@ -31,6 +31,7 @@ body {
     margin:25px;
     height: 525px;
     overflow:hidden;
+    text-align: center;
 }
 
 #headPic {
@@ -41,10 +42,12 @@ body {
 #textHead {
     position: absolute;
     padding-top: 100px;
-    padding-left: 350px;
+    padding-left: 600px;
     font-size: 4em;
     
 }
+
+
 
 #buttonHolder {
     text-align:center;
